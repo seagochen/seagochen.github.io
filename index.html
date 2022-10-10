@@ -14,6 +14,9 @@
     
     <!-- Use fontawesome 5.15.1 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+	
+	<!-- load digital clock -->
+    <script src="js/digital_clock.js"></script>
 </head>
 
 <body>
@@ -58,7 +61,14 @@
             </div>
         </div>
 
+        <!-- Display a clock in the bottom right corner -->
+        <div id="MyClockDisplay" class="clock" style="color: white; font-size: 40px; position: absolute; top: 90%; left: 90%; transform: translate(-50%, -50%); z-index: 2;"></div>
     </div>
+
+    <!-- When page is loaded, the clock will be displayed -->
+    <script type="text/javascript">
+        window.onload = showTime();
+    </script>
 
 </body>
 </html>
