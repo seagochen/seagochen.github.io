@@ -21,25 +21,21 @@
 
 <body>
     <!-- This is the navigation bar, which is fixed on the top of the page, and the background color is white -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <!-- This is the logo -->
             <a class="navbar-brand" href="index.html">
                 Orlando's Blog
             </a>
-            <!-- This is the button for mobile devices -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- This is the navigation bar -->
-            <div class="container">
-                <header class="d-flex justify-content-center py-3">
-                  <ul class="nav nav-pills">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav nav-pills">
                     <li class="nav-item"><a href="./index.html" class="nav-link active" aria-current="page">Home</a></li>
                     <li class="nav-item"><a href="./projects.html" class="nav-link">Projects</a></li>
                     <li class="nav-item"><a href="./resume.html" class="nav-link">Resume</a></li>
-                  </ul>
-                </header>
+                </ul>
             </div>
         </div>
     </nav>
@@ -67,6 +63,24 @@
 
     <!-- When page is loaded, the clock will be displayed -->
     <script type="text/javascript">
+
+        // when the user uses a mobile device, the clock will be hidden
+        if (window.innerWidth < 768) {
+            document.getElementById("MyClockDisplay").style.display = "none";
+        } else {
+            document.getElementById("MyClockDisplay").style.display = "block";
+        }
+
+        // when the user resizes the window, the clock will be hidden
+        window.addEventListener("resize", function() {
+            if (window.innerWidth < 768) {
+                document.getElementById("MyClockDisplay").style.display = "none";
+            } else {
+                document.getElementById("MyClockDisplay").style.display = "block";
+            }
+        });
+
+        // show the clock
         window.onload = showTime();
     </script>
 

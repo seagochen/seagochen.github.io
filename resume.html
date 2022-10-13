@@ -10,30 +10,28 @@
     
     <!-- Use bootstrap both CSS and JS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+ 
 </head>
    
 <body class="vscode-body vscode-light">
 
     <!-- This is the navigation bar, which is fixed on the top of the page, and the background color is white -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <!-- This is the logo -->
             <a class="navbar-brand" href="index.html">
                 Orlando's Blog
             </a>
-            <!-- This is the button for mobile devices -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- This is the navigation bar -->
-            <div class="container">
-                <header class="d-flex justify-content-center py-3">
-                  <ul class="nav nav-pills">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav nav-pills">
                     <li class="nav-item"><a href="./index.html" class="nav-link" aria-current="page">Home</a></li>
                     <li class="nav-item"><a href="./projects.html" class="nav-link">Projects</a></li>
                     <li class="nav-item"><a href="./resume.html" class="nav-link active">Resume</a></li>
                   </ul>
-                </header>
             </div>
         </div>
     </nav>
@@ -92,7 +90,7 @@
                     <div class="row" style="margin-top: 10px;">
                         <div class="col-md-6">
                             <h4>Skills</43>
-                                       
+                                        
                             <!-- Use a table to show the skills -->
                             <font size="3" face="Times New Roman" >
                                 <table class="table table-striped" >
@@ -263,8 +261,5 @@
             </div>
         </div>
     </div>
-
-
-        
 </body>
 </html>
