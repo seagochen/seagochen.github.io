@@ -17,6 +17,23 @@
 	
     <!-- Load markdown-js module -->
     <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+
+    <!-- If user use a phone, the content of Markdown should fit the width of the device,
+        else the content of Markdown should be 80% of the width of the device -->
+    <style>
+        @media only screen and (max-width: 600px) {
+            mobile-width {
+                width: 100%;
+                margin:0 auto;
+            }
+        }
+
+        /* This is for the width of the device is larger than 600px */
+        desktop-width {
+            width: 80%;
+            margin:0 auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -41,18 +58,36 @@
 
     <!-- Display a markdown file here -->
     <div class="container">
-        <div style="width:70%; margin:0 auto;" id="mdcontainer" />
+        <div class="row">
+            <!-- Display the content and fill the whole page when detected a mobile device -->
+            <div class="col-12">
+                <!-- This is the content of the markdown file -->
+                <div class="mobile-width" id="mdcontainer" />
+            </div>
+        </div>
     </div>
 
-
-    <!-- Add a button to the bottom of the page, which can jump to the top of the page.
-        The button is blue, and the icon is an arrow pointing up. -->
-    <button onclick="topFunction()" id="myBtn" title="Go to top" class="btn btn-primary">
-        <i class="fas fa-arrow-up"></i>
+    <!-- Scroll to the top of the page -->
+    <button id="scrollUp" type="button" class="btn btn-primary btn-floating btn-lg"
+        style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; opacity:0.1"
+        onclick="topFunction()"
+        onmouseover="onMouseOver()"
+        onmouseout="onMouseOut()">
+        <i class="fas fa-arrow-up"></i> 
     </button>
 </body>
 
 <script>
+    // When mouse is over the button, the button should be opaque
+    function onMouseOver() {
+        document.getElementById("scrollUp").style.opacity = "1";
+    }
+
+    // When mouse is out of the button, the button should be transparent
+    function onMouseOut() {
+        document.getElementById("scrollUp").style.opacity = "0.1";
+    }
+
     // topFunction() is used to jump to the top of the page
     function topFunction() {
         document.body.scrollTop = 0;
