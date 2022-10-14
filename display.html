@@ -67,6 +67,14 @@
         </div>
     </div>
 
+    <!-- Add a footer, but display nothing -->
+    <div class="container">
+        <div class="row">
+            <div  class="container-fluid" style="padding: 5px; margin-top: 20px; text-align: center;">
+            </div>
+        </div>
+    </div>
+
     <!-- Scroll to the top of the page -->
     <button id="scrollUp" type="button" class="btn btn-primary btn-floating btn-lg"
         style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; opacity:0.1"
@@ -80,12 +88,22 @@
 <script>
     // When mouse is over the button, the button should be opaque
     function onMouseOver() {
-        document.getElementById("scrollUp").style.opacity = "1";
+        // if the user use a mobile device, we do nothing
+        if (window.innerWidth <= 600) {
+            return;
+        } else {
+            document.getElementById("scrollUp").style.opacity = "1";
+        }
     }
 
     // When mouse is out of the button, the button should be transparent
     function onMouseOut() {
-        document.getElementById("scrollUp").style.opacity = "0.1";
+        // if the user use a mobile device, we do nothing
+        if (window.innerWidth <= 600) {
+            return;
+        } else {
+            document.getElementById("scrollUp").style.opacity = "0.1";
+        }
     }
 
     // topFunction() is used to jump to the top of the page
