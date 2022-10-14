@@ -44,27 +44,41 @@
         <div style="width:70%; margin:0 auto;" id="mdcontainer" />
     </div>
 
-    <script>
-        function getQuery(key) {
-            var query = window.location.search.substring(1);
-            var key_values = query.split("&");
-            var params = {};
-            key_values.map(function (key_val) {
-                var key_val_arr = key_val.split("=");
-                params[key_val_arr[0]] = key_val_arr[1];
-            });
-            if (typeof params[key] != "undefined") {
-                return params[key];
-            }
-            return "";
-        }
-    
-        window.onload = function () {
-            md = document.createElement("zero-md")
-            md.setAttribute("src", getQuery("src"))
-            md.setAttribute("no-shadow", "")
-            document.getElementById("mdcontainer").append(md)
-        }
-    </script>
+
+    <!-- Add a button to the bottom of the page, which can jump to the top of the page.
+        The button is blue, and the icon is an arrow pointing up. -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top" class="btn btn-primary">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 </body>
+
+<script>
+    // topFunction() is used to jump to the top of the page
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
+    // Get the markdown file name from the URL
+    function getQuery(key) {
+        var query = window.location.search.substring(1);
+        var key_values = query.split("&");
+        var params = {};
+        key_values.map(function (key_val) {
+            var key_val_arr = key_val.split("=");
+            params[key_val_arr[0]] = key_val_arr[1];
+        });
+        if (typeof params[key] != "undefined") {
+            return params[key];
+        }
+        return "";
+    }
+
+    window.onload = function () {
+        md = document.createElement("zero-md")
+        md.setAttribute("src", getQuery("src"))
+        md.setAttribute("no-shadow", "")
+        document.getElementById("mdcontainer").append(md)
+    }
+</script>
 </html>
