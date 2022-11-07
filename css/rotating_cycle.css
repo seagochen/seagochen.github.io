@@ -1,0 +1,29 @@
+/**
+* Define a rotating cycle of colors
+*/
+@keyframes rotating-cycle {
+    0% {
+        background-color: #FF0000;
+    }
+    25% {
+        background-color: #FFFF00;
+    }
+    50% {
+        background-color: #00FF00;
+    }
+    75% {
+        background-color: #00FFFF;
+    }
+    100% {
+        background-color: #0000FF;
+    }
+
+    from {
+        transform: rotate(-360deg);
+        background-color: #FF0000;
+    }
+    to {
+        transform: rotate(360deg);
+        background-color: #0000FF;
+    }
+}
