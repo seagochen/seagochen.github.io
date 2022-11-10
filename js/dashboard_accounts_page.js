@@ -192,18 +192,19 @@ function submit() {
     accountType = searchFromDictionary(m_accountTypes, accountType);
     accountRestriction = searchFromDictionary(m_restriction, accountRestriction);
 
+    // Prepare the data to submit.
+    var data = JSON.stringify({
+        "id": m_account_id == null ? "" : m_account_id,
+        "serviceProvider": serviceProvider,
+        "accountName": accountName,
+        "accountPassword": accountPassword,
+        "accountType": accountType,
+        "accountRestriction": accountRestriction,
+        "note": note
+    });
+
     // use ajax to send the data to the server
     if (m_submit_type == "add") {
-        // set data
-        var data = JSON.stringify({
-            "service_provider": serviceProvider,
-            "account_name": accountName,
-            "account_password": accountPassword,
-            "account_type": accountType,
-            "account_restriction": accountRestriction,
-            "note": note
-        });
-
         // send the request
         $.ajax({
             url: url_addAccount,
@@ -225,16 +226,7 @@ function submit() {
 
 
     } else if (m_submit_type == "edit") {
-        // set data
-        var data = JSON.stringify({
-            "id": m_account_id,
-            "service_provider": serviceProvider,
-            "account_name": accountName,
-            "account_password": accountPassword,
-            "account_type": accountType,
-            "account_restriction": accountRestriction,
-            "note": note
-        });
+
 
         // send the request
         $.ajax({
